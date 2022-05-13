@@ -1,3 +1,6 @@
+#ifndef DequeH
+#define DequeH
+
 #include <string>
 #include <cstddef>
 #include <concepts>
@@ -132,3 +135,5 @@ public:
 };
 
 static_assert(DequeTAD<Deque, char>);
+
+#endif
