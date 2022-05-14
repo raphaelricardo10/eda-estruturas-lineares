@@ -17,15 +17,15 @@ public:
     Deque d;
 
     void empilha(char c)
-    {
+    {   // Adiciona um elemento no fim
         this->d.insereFim(c);
     }
     char desempilha()
-    {
+    {   // Remove o elemento do fim
         return this->d.removeFim();
     }
     char topo()
-    {
+    {   // Retorna o último elemento da pilha
         return this->d.fim();
     }
 };
