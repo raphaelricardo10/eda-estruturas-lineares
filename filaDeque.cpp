@@ -1,7 +1,8 @@
 #include <iostream>
 #include "filaDeque.hpp"
 
-int main(){
+int main()
+{
     FilaDeque fd;
 
     fd.enfileira('a');
