@@ -5,18 +5,21 @@ class Pilha2F
 {
 private:
     // Inverte recursivamente os elementos de f1 e coloca em f2
-    void inverte_p1()
+    void desenfileira_f1()
     {
-        if (this->f1.empty())
+        while (!this->f1.empty())
         {
-            return;
+            this->f2.push(this->f1.front());
+            this->f1.pop();
         }
-
-        char c = this->f1.front();
-        this->f1.pop();
-
-        this->inverte_p1();
-        this->f2.push(c);
+    }
+    void enfileira_f1()
+    {
+        while (!this->f2.empty())
+        {
+            this->f1.push(this->f2.front());
+            this->f2.pop();
+        }
     }
 
 public:
@@ -31,21 +34,21 @@ public:
 
     void empilha(char c)
     {
+        this->desenfileira_f1();
         this->f1.push(c);
+        this->enfileira_f1();
     }
     char desempilha()
     {
-        this->inverte_p1();
-        char c = this->f2.front();
-        this->f2.pop();
+        char c = this->f1.front();
+        this->f1.pop();
 
         return c;
     }
 
     char topo()
     {
-        this->inverte_p1();
-        return this->f2.front();
+        return this->f1.front();
     }
 };
 
